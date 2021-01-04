@@ -60,6 +60,7 @@ function generatePlugins() {
 
     new EslintWebpackPlugin({
       extensions: ['ts', 'tsx'],
+      fix: true,
       emitWarning: true,
       failOnError: !isDevMode,
     }),
