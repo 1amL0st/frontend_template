@@ -33,7 +33,7 @@ function generateModule() {
           {
             loader: "awesome-typescript-loader",
             options: {
-              configFileName: 'tsconfig.json'
+              configFileName: './configs/tsconfig.json'
             },
           }
         ]
@@ -59,6 +59,7 @@ function generatePlugins() {
     }),
 
     new EslintWebpackPlugin({
+      overrideConfigFile: path.resolve(__dirname, './.eslintrc'),
       extensions: ['ts', 'tsx'],
       fix: true,
       emitWarning: true,
@@ -82,6 +83,7 @@ module.exports = function moduleGenerator(mode) {
       extensions: ['.ts', '.tsx', '.json', '.js'],
       alias: {
         // 'assets': path.resolve(__dirname, '../public/assets/'),
+        'components': path.resolve(__dirname, '/source/components')
       }
     },
 
